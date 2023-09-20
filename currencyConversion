@@ -1,0 +1,12 @@
+fun convertCurrency(amount: Double, exchangeRate: Double): Double {
+    return amount * exchangeRate
+}
+
+fun main() {
+    val amountInPeso = 1.0
+    val exchangeRate = 0.0176 
+
+    val amountInDollars = convertCurrency(amountInPeso, exchangeRate)
+
+    println("$amountInPeso pesos is equal to $amountInDollars dollars.")
+}

@@ -1,0 +1,112 @@
+// Fahrenheit to Celsius
+fun fahrenheitToCelsius(fahrenheit: Double): Double {
+    return (fahrenheit - 32) * 5 / 9
+}
+
+// Fahrenheit to Kelvin
+fun fahrenheitToKelvin(fahrenheit: Double): Double {
+    return (fahrenheit - 32) * 5 / 9 + 273.15
+}
+
+// Celsius to Fahrenheit
+fun celsiusToFahrenheit(celsius: Double): Double {
+    return (celsius * 9 / 5) + 32
+}
+
+// Celsius to Kelvin
+fun celsiusToKelvin(celsius: Double): Double {
+    return celsius + 273.15
+}
+
+// Kelvin to Fahrenheit
+fun kelvinToFahrenheit(kelvin: Double): Double {
+    return (kelvin - 273.15) * 9 / 5 + 32
+}
+
+// Kelvin to Celsius
+fun kelvinToCelsius(kelvin: Double): Double {
+    return kelvin - 273.15
+}
+
+fun main() {
+    println("Temperature Converter")
+    println("")
+    println("Choose Conversion: ")
+    println("[1] Fahrenheit to Celsius")
+    println("[2] Fahrenheit to Kelvin")
+    println("")
+    println("[3] Celsius to Fahrenheit")
+    println("[4] Celsius to Kelvin")
+    println("")
+    println("[5] Kelvin to Fahrenheit")
+    println("[6] Kelvin to Celsius")
+    println("")
+
+    val choice = readLine()?.toIntOrNull()
+
+    when (choice) {
+        1 -> {
+            println("Enter temperature in Fahrenheit:")
+            val fahrenheit = readLine()?.toDoubleOrNull()
+            if (fahrenheit != null) {
+                val celsius = fahrenheitToCelsius(fahrenheit)
+                println("$fahrenheit degrees Fahrenheit is $celsius degrees Celsius")
+            } else {
+                println("Invalid input. Please enter a valid temperature in Fahrenheit.")
+            }
+        }
+        2 -> {
+            println("Enter temperature in Fahrenheit:")
+            val fahrenheit = readLine()?.toDoubleOrNull()
+            if (fahrenheit != null) {
+                val kelvin = fahrenheitToKelvin(fahrenheit)
+                println("$fahrenheit degrees Fahrenheit is $kelvin Kelvin")
+            } else {
+                println("Invalid input. Please enter a valid temperature in Fahrenheit.")
+            }
+        }
+        3 -> {
+            println("Enter temperature in Celsius:")
+            val celsius = readLine()?.toDoubleOrNull()
+            if (celsius != null) {
+                val fahrenheit = celsiusToFahrenheit(celsius)
+                println("$celsius degrees Celsius is $fahrenheit degrees Fahrenheit")
+            } else {
+                println("Invalid input. Please enter a valid temperature in Celsius.")
+            }
+        }
+        4 -> {
+            println("Enter temperature in Celsius:")
+            val celsius = readLine()?.toDoubleOrNull()
+            if (celsius != null) {
+                val kelvin = celsiusToKelvin(celsius)
+                println("$celsius degrees Celsius is $kelvin Kelvin")
+            } else {
+                println("Invalid input. Please enter a valid temperature in Celsius.")
+            }
+        }
+        5 -> {
+            println("Enter temperature in Kelvin:")
+            val kelvin = readLine()?.toDoubleOrNull()
+            if (kelvin != null) {
+                val fahrenheit = kelvinToFahrenheit(kelvin)
+                println("$kelvin Kelvin is $fahrenheit degrees Fahrenheit")
+            } else {
+                println("Invalid input. Please enter a valid temperature in Kelvin.")
+            }
+        }
+        6 -> {
+            println("Enter temperature in Kelvin:")
+            val kelvin = readLine()?.toDoubleOrNull()
+            if (kelvin != null) {
+                val celsius = kelvinToCelsius(kelvin)
+                println("$kelvin Kelvin is $celsius degrees Celsius")
+            } else {
+                println("Invalid input. Please enter a valid temperature in Kelvin.")
+            }
+        }
+        else -> {
+            println("Invalid choice. Please select a valid option (1, 2, 3, 4, 5, or 6).")
+        }
+    }
+}
